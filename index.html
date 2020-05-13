@@ -39,16 +39,16 @@
         var texto = ["Producción", "Fábrica", "Industrial", "Producto", "Bolsa de té", "Maquinaria"];
         // Referencias para lo que sigue https://api.jquery.com/jquery.each/ ({ https://api.jquery.com/append/ })
         $.each( texto, function( i, frase ) {
-            $("#articulos").append("<div class='col-md-6 col-lg-4 col-xl-3 mb-4'><article class='bg-primary text-light p-3 shadow-sm rounded'>"+frase+"</article></div>");
+            $("#articulos").append("<div class='col-md-6 col-lg-4 col-xl-3 mb-4'><article class='bg-warning text-light p-3 shadow rounded'>"+frase+"</article></div>");
         });
         // Lo que sigue aprovecha Bootstrap y jQuery. Afecta a la proporción del video embebido, quitando/poniendo una clase
         $(window).bind("load resize",function() {
             var w = $(window).width();
             console.log(w);
             if (w <= 992) {
-                $( "div.embed-responsive" ).removeClass( "div.embed-responsive" ).addClass( "div.embed-responsive" );
+                $( "div.embed-responsive" ).removeClass( "embed-responsive-4by3" ).addClass( "embed-responsive-1by1" );
             } else {
-                $( "div.embed-responsive" ).removeClass( "div.embed-responsive" ).addClass( "div.embed-responsive" );
+                $( "div.embed-responsive" ).removeClass( "embed-responsive-1by1" ).addClass( "embed-responsive-4by3" );
             }
         });
     </script>
